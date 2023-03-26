@@ -21,10 +21,10 @@ start_container() {
         -e DISPLAY=${DISPLAY} \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -v ${data_dir}:/data \
-        -v ${project_dir}:$HOME/projects \
+        -v ${project_dir}:/projects \
         --name ${container_name} \
         --entrypoint /dev-entrypoint.sh \
-        --workdir $HOME/projects  \
+        --workdir /projects  \
         ${image_name} \
         ${shell_cmd}
 }
